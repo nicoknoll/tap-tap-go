@@ -4,7 +4,8 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import Autocomplete from 'react-toolbox/lib/autocomplete';
 import { Button } from 'react-toolbox/lib/button';
 import { Card } from 'react-toolbox/lib/card';
-
+import OrderItems from './OrderItems'
+ require("../images/beer.png")
 
 class FromToRow extends React.Component {
     constructor() {
@@ -61,6 +62,12 @@ class FromToRow extends React.Component {
 }
 
 class FromToCard extends React.Component {
+    constructor(props) {
+        super()
+
+        this.orderItems = [{ symbol: '../images/beer.png' }, { symbol: '../images/beer.png' }]
+    }
+
     render() {
         const cardStyle = {
             background: '#eee',
@@ -90,6 +97,8 @@ class FromToCard extends React.Component {
                     </Row>
 
                     <FromToRow />
+
+                    <OrderItems items={this.orderItems}/>
 
                     <Row>
                         <Col xs={12} style={textCenter}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import OrderItem from './OrderItem.js'
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 class OrderItems extends React.Component {
 
@@ -12,11 +13,16 @@ class OrderItems extends React.Component {
 	}
 
 	render() {
-		return (<div>
-			{
-				this.state.items.map((item) => <OrderItem symbol={item.symbol}/>)
-			}
-			</div>)
+
+		return (
+
+			<Row>
+				<Col xs={12}>
+				{
+					this.state.items.map((item, index) => <Col key={index}> <OrderItem symbol={item.symbol}/> </Col>)
+				}
+				</Col>
+			</Row>)
 	}
 }
 
