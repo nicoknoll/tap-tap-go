@@ -35,7 +35,7 @@ class FromToRow extends React.Component {
                     <Autocomplete
                         direction="down"
                         selectedPosition="above"
-                        label="Von"
+                        label="From"
                         onChange={this.handleChange.bind(this, 'from')}
                         source={this.possibleValues}
                         value={this.state.from}
@@ -47,7 +47,7 @@ class FromToRow extends React.Component {
                         <Autocomplete
                             direction="down"
                             selectedPosition="above"
-                            label="Nach"
+                            label="To"
                             onChange={this.handleChange.bind(this, 'to')}
                             source={this.possibleValues}
                             value={this.state.to}
@@ -93,7 +93,7 @@ class FromToCard extends React.Component {
 
                     <Row>
                         <Col xs={12} style={textCenter}>
-                            <Button label='Transporter finden' onClick={this.props.onSubmit.bind(this)} raised />
+                            <Button label='Find transporter' onClick={this.props.onSubmit.bind(this)} raised />
                         </Col>
                     </Row>
                 </Grid>
