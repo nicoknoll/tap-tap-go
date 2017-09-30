@@ -33,7 +33,7 @@ class OrderItems extends React.Component {
 			<Row>
 				<Col xs={12}>
 				{
-					this.data.items.map((item, index) => <Col key={index}> <OrderItem capacityChange={this.updateCapacity} item={item}/> </Col>)
+					this.data.items.map((item, index) => <Col key={index}> <OrderItem capacityChange={this.updateCapacity.bind(this)} item={item}/> </Col>)
 				}
 				</Col>
 			</Row>)
