@@ -5,7 +5,9 @@ import Autocomplete from 'react-toolbox/lib/autocomplete';
 import { Button } from 'react-toolbox/lib/button';
 import { Card } from 'react-toolbox/lib/card';
 import OrderItems from './OrderItems'
- require("../images/beer.png")
+require("../images/bottle.png")
+require("../images/keg.png")
+require("../images/can.png")
 
 class FromToRow extends React.Component {
     constructor() {
@@ -65,7 +67,16 @@ class FromToCard extends React.Component {
     constructor(props) {
         super()
 
-        this.orderItems = [{ symbol: '../images/beer.png' }, { symbol: '../images/beer.png' }]
+        this.orderItems = [
+            { symbol: '../images/bottle.png', capacity: 0.031 },
+			{ symbol: '../images/bottle.png', capacity: 0.031 },
+			{ symbol: '../images/bottle.png', capacity: 0.023 },
+			{ symbol: '../images/keg.png', capacity: 0.032 },
+			{ symbol: '../images/keg.png', capacity: 0.041 },
+			{ symbol: '../images/keg.png', capacity: 0.062 },
+			{ symbol: '../images/can.png', capacity: 0.013 },
+			{ symbol: '../images/can.png', capacity: 0.018 },
+        ]
     }
 
     render() {
