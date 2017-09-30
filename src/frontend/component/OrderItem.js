@@ -16,6 +16,8 @@ class OrderItem extends React.Component {
 			count: 0,
 			summedCapacity: 0
 		}
+
+		this.updateCapacity = props.capacityChange
 	}
 
 	increase() {
@@ -23,6 +25,8 @@ class OrderItem extends React.Component {
 			count: this.state.count + 1,
 			summedCosts: this.state.summedCapacity + this.data.capacity
 		});
+
+		this.updateCapacity(this.data.capacity)
 	}
 
 	decrease() {
@@ -32,6 +36,8 @@ class OrderItem extends React.Component {
 			count: this.state.count - 1,
 			summedCosts: this.state.summedCapacity - this.data.capacity
 		});
+
+		this.updateCapacity((-1) * this.data.capacity)
 	}
 
 	render() {

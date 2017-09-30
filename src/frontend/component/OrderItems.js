@@ -7,19 +7,33 @@ class OrderItems extends React.Component {
 	constructor(props) {
 		super()
 
-		this.state = {
+		this.data = {
 			items: props.items
 		}
+
+		this.state = {
+			capacity: 0
+		}
+
+		this.capacityCallback = props.capacityChange
+	}
+
+	updateCapacity = (capacityChange) => {
+		var newCapacity = this.state.capacity + capacityChange
+		this.setState({
+			capacity: newCapacity
+		})
+
+		this.capacityCallback(newCapacity)
 	}
 
 	render() {
-
 		return (
 
 			<Row>
 				<Col xs={12}>
 				{
-					this.state.items.map((item, index) => <Col key={index}> <OrderItem item={item}/> </Col>)
+					this.data.items.map((item, index) => <Col key={index}> <OrderItem capacityChange={this.updateCapacity} item={item}/> </Col>)
 				}
 				</Col>
 			</Row>)

@@ -77,6 +77,17 @@ class FromToCard extends React.Component {
 			{ symbol: '../images/can.png', capacity: 0.013, tooltip: 'Pallet with 0.3L cans.' },
 			{ symbol: '../images/can.png', capacity: 0.018, tooltip: 'Pallet with 0.5L cans.' },
         ]
+        this.props = props
+
+        this.state = {
+            orderCapacity: 0
+        }
+    }
+
+    updateCapacity(capacity) {
+        this.setState({
+			orderCapacity: capacity
+        })
     }
 
     render() {
@@ -109,7 +120,9 @@ class FromToCard extends React.Component {
 
                     <FromToRow />
 
-                    <OrderItems items={this.orderItems}/>
+                    <OrderItems capacityChange={this.updateCapacity.bind(this)} items={this.orderItems}/>
+
+					{this.state.orderCapacity}
 
                     <Row>
                         <Col xs={12} style={textCenter}>
