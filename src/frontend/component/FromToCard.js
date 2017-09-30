@@ -8,6 +8,7 @@ import OrderItems from './OrderItems'
 require("../images/bottle.png")
 require("../images/keg.png")
 require("../images/can.png")
+require("../images/logo.png")
 
 class FromToRow extends React.Component {
     constructor() {
@@ -85,9 +86,10 @@ class FromToCard extends React.Component {
     }
 
     updateCapacity(capacity) {
+        this.props.onCapacityChange(capacity);
         this.setState({
 			orderCapacity: capacity
-        })
+        });
     }
 
     render() {
@@ -114,7 +116,7 @@ class FromToCard extends React.Component {
                 <Grid fluid style={fullWidth}>
                     <Row>
                         <Col xs={12} style={textCenter}>
-                            <h1 style={headlineStyle}>Tap Tap Go</h1>
+                            <img src='../images/logo.png' style={{height: 'auto', width: '500px'}} />
                         </Col>
                     </Row>
 
@@ -122,9 +124,7 @@ class FromToCard extends React.Component {
 
                     <OrderItems capacityChange={this.updateCapacity.bind(this)} items={this.orderItems}/>
 
-					{this.state.orderCapacity}
-
-                    <Row>
+                    <Row style={{marginTop: '40px'}}>
                         <Col xs={12} style={textCenter}>
                             <Button label='Find transporter' onClick={this.props.onSubmit.bind(this)} raised />
                         </Col>

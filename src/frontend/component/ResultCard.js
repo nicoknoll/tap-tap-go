@@ -36,8 +36,7 @@ class ResultCard extends React.Component {
             overflow: 'hidden'
         };
 
-        const onePercent = (this.props.max - this.props.min) / 100;
-        const barFilled = this.props.current / onePercent;
+        const barFilled =100 - (this.props.current / (this.props.max - this.props.min)  * 100);
 
         const barStyle = {
             width: `${barFilled}%`,
@@ -61,13 +60,13 @@ class ResultCard extends React.Component {
                             <Col xs={12}>
                                 <span
                                     style={{color: '#777'}}>Aktuell:</span><br />
-                                <span style={{fontSize: '80px'}}>{this.props.current}€</span>
+                                <span style={{fontSize: '80px'}}>{Math.round((this.props.current * 100))/100}€</span>
                             </Col>
                         </Row>
                         <Row>
                             <Col xs={1} style={{textAlign: 'right'}}>
                                 <span style={{color: '#777'}}>min.:</span><br/>
-                                <b>{this.props.min}€</b>
+                                <b>{Math.round((this.props.min * 100))/100}€</b>
                             </Col>
                             <Col xs={10}>
                                 <div style={barWrapperStyle}>
@@ -76,7 +75,7 @@ class ResultCard extends React.Component {
                             </Col>
                             <Col xs={1}>
                                 <span style={{color: '#777'}}>max.:</span><br/>
-                                <b>{this.props.max}€</b>
+                                <b>{Math.round((this.props.max * 100))/100}€</b>
                             </Col>
                         </Row>
                     </Grid>

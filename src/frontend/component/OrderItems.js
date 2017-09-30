@@ -30,12 +30,12 @@ class OrderItems extends React.Component {
 	render() {
 		return (
 
-			<Row>
-				<Col xs={12}>
+			<Row style={{justifyContent: 'center', textAlign: 'center'}}>
 				{
-					this.data.items.map((item, index) => <Col key={index}> <OrderItem capacityChange={this.updateCapacity.bind(this)} item={item}/> </Col>)
+					this.data.items.map((item, index) => <Col xs={1} key={index}>
+						<OrderItem capacityChange={this.updateCapacity.bind(this)} item={item}/>
+					</Col>)
 				}
-				</Col>
 			</Row>)
 	}
 }

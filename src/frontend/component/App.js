@@ -14,7 +14,8 @@ class App extends React.Component {
         super();
         this.state = {
             step: 1,
-            activeDialog: false
+            activeDialog: false,
+            capacity: 0,
         }
 
         this.actions = [
@@ -23,6 +24,13 @@ class App extends React.Component {
                 onClick: this.reloadPage.bind(this)
             },
         ]
+    }
+
+    handleChange(key, value) {
+        const state = Object.assign({}, this.state);
+        state[key] = value;
+        console.log(state)
+        this.setState(state);
     }
 
     reloadPage() {
@@ -60,17 +68,34 @@ class App extends React.Component {
     }
 
     render() {
+        const truckSize = 2.5;
+        const truckPrice = 259;
+
+        const truckLoad = 0.1;
+        let newTruckLoad = truckLoad + this.state.capacity;
+
+        const min = truckPrice / truckSize * this.state.capacity;
+        const max = truckPrice;
+        const current = truckPrice / newTruckLoad * this.state.capacity;
+
+        const percent =  truckPrice / newTruckLoad;
+
         return (
             <Layout
                 style={{backgroundSize: 'cover', justifyContent: 'flex-start'}}>
-                <FromToCard onSubmit={this.nextStep.bind(this, 2)}/>
+                <FromToCard
+                    onSubmit={this.nextStep.bind(this, 2)}
+                    onCapacityChange={this.handleChange.bind(this, 'capacity')}
+                />
+
 
                 <div style={{display: this.state.step > 1 ? 'block': 'none'}}>
                     <ResultCard
                         date="13. Januar 2018"
-                        max={100.21}
-                        min={10.47}
-                        current={51.25}
+                        max={max}
+                        min={min}
+                        current={current}
+                        percent={percent}
                         onSubmit={this.nextStep.bind(this, 3)} />
                 </div>
 

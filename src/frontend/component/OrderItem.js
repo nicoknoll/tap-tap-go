@@ -42,11 +42,13 @@ class OrderItem extends React.Component {
 
 	render() {
 		return (<div>
-			<Tooltip content={this.data.tooltip}>
-				<img style={{display: 'block'}} src={this.data.symbol}/>
-			</Tooltip>
+			<div  style={{display: 'block', margin: '15px 0px'}}>
+				<Tooltip content={this.data.tooltip}>
+					<img src={this.data.symbol}/>
+				</Tooltip>
+			</div>
 			<button onClick={this.decrease.bind(this)}>-</button>
-			{this.state.count}
+			<span> {this.state.count} </span>
 			<button onClick={this.increase.bind(this)}>+</button>
 		</div>)
 	}
