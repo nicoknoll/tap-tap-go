@@ -19,7 +19,7 @@ class OrderItems extends React.Component {
 			<Row>
 				<Col xs={12}>
 				{
-					this.state.items.map((item, index) => <Col key={index}> <OrderItem symbol={item.symbol}/> </Col>)
+					this.state.items.map((item, index) => <Col key={index}> <OrderItem item={item}/> </Col>)
 				}
 				</Col>
 			</Row>)

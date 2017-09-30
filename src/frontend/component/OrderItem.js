@@ -1,4 +1,5 @@
 import React from 'react';
+import {Tooltip} from 'react-lightweight-tooltip';
 
 class OrderItem extends React.Component {
 
@@ -6,9 +7,9 @@ class OrderItem extends React.Component {
 		super()
 
 		this.data = {
-			symbol: props.symbol,
-			capacity: props.capacity || 0,
-			tooltip: props.tooltip || "BEER"
+			symbol: props.item.symbol,
+			capacity: props.item.capacity || 0,
+			tooltip: props.item.tooltip || "BEER"
 		}
 
 		this.state = {
@@ -35,7 +36,9 @@ class OrderItem extends React.Component {
 
 	render() {
 		return (<div>
-			<img style={{display: 'block'}} src={this.data.symbol}/>
+			<Tooltip content={this.data.tooltip}>
+				<img style={{display: 'block'}} src={this.data.symbol}/>
+			</Tooltip>
 			<button onClick={this.decrease.bind(this)}>-</button>
 			{this.state.count}
 			<button onClick={this.increase.bind(this)}>+</button>

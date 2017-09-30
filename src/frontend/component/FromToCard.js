@@ -68,14 +68,14 @@ class FromToCard extends React.Component {
         super()
 
         this.orderItems = [
-            { symbol: '../images/bottle.png', capacity: 0.031 },
-			{ symbol: '../images/bottle.png', capacity: 0.031 },
-			{ symbol: '../images/bottle.png', capacity: 0.023 },
-			{ symbol: '../images/keg.png', capacity: 0.032 },
-			{ symbol: '../images/keg.png', capacity: 0.041 },
-			{ symbol: '../images/keg.png', capacity: 0.062 },
-			{ symbol: '../images/can.png', capacity: 0.013 },
-			{ symbol: '../images/can.png', capacity: 0.018 },
+            { symbol: '../images/bottle.png', capacity: 0.031, tooltip: 'Crate with 0,3L bottles.' },
+			{ symbol: '../images/bottle.png', capacity: 0.031, tooltip: 'Crate with 0,5L bottles.' },
+			{ symbol: '../images/bottle.png', capacity: 0.023, tooltip: 'Crate with 1L bottles.' },
+			{ symbol: '../images/keg.png', capacity: 0.032, tooltip: 'Small keg.' },
+			{ symbol: '../images/keg.png', capacity: 0.041, tooltip: 'Medium keg.' },
+			{ symbol: '../images/keg.png', capacity: 0.062, tooltip: 'Big keg.' },
+			{ symbol: '../images/can.png', capacity: 0.013, tooltip: 'Pallet with 0.3L cans.' },
+			{ symbol: '../images/can.png', capacity: 0.018, tooltip: 'Pallet with 0.5L cans.' },
         ]
     }
 
