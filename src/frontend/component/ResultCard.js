@@ -58,7 +58,7 @@ class ResultCard extends React.Component {
                         <Row style={{textAlign: 'center', margin: '50px 0px'}}>
                             <Col xs={12}>
                                 <span
-                                    style={{color: '#777'}}>Aktuell:</span><br />
+                                    style={{color: '#777'}}>Current:</span><br />
                                 <span style={{fontSize: '80px'}}>{Math.round((this.props.current * 100))/100}€</span>
                             </Col>
                         </Row>
@@ -81,7 +81,7 @@ class ResultCard extends React.Component {
 
                     <Row style={{marginTop: '40px'}}>
                         <Col xs={12} style={{textAlign: 'center'}}>
-                            <Button label='Auswählen'
+                            <Button label='Select'
                                     onClick={this.props.onSubmit.bind(this)}
                                     primary raised/>
                         </Col>
