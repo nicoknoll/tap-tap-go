@@ -36,7 +36,7 @@ class ResultCard extends React.Component {
             overflow: 'hidden'
         };
 
-        const barFilled =100 - (this.props.current / (this.props.max - this.props.min)  * 100);
+        const barFilled = 100 - 10 * (this.props.current / (this.props.max - this.props.min));
 
         const barStyle = {
             width: `${barFilled}%`,
@@ -54,7 +54,6 @@ class ResultCard extends React.Component {
                             <IconButton icon='keyboard_arrow_right'/>
                         </Col>
                     </Row>
-
                     <Grid fluid style={fullWidth}>
                         <Row style={{textAlign: 'center', margin: '50px 0px'}}>
                             <Col xs={12}>
