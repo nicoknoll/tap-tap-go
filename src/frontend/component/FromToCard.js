@@ -5,9 +5,14 @@ import Autocomplete from 'react-toolbox/lib/autocomplete';
 import { Button } from 'react-toolbox/lib/button';
 import { Card } from 'react-toolbox/lib/card';
 import OrderItems from './OrderItems'
-require("../images/bottle.png")
-require("../images/keg.png")
-require("../images/can.png")
+require("../images/bottle_s.png")
+require("../images/bottle_m.png")
+require("../images/bottle_l.png")
+require("../images/keg_s.png")
+require("../images/keg_m.png")
+require("../images/keg_l.png")
+require("../images/can_m.png")
+require("../images/can_l.png")
 require("../images/logo.png")
 
 class FromToRow extends React.Component {
@@ -76,14 +81,14 @@ class FromToCard extends React.Component {
         super()
 
         this.orderItems = [
-            { symbol: '../images/bottle.png', capacity: 0.031, tooltip: 'Crate with 0,3L bottles.' },
-			{ symbol: '../images/bottle.png', capacity: 0.031, tooltip: 'Crate with 0,5L bottles.' },
-			{ symbol: '../images/bottle.png', capacity: 0.023, tooltip: 'Crate with 1L bottles.' },
-			{ symbol: '../images/keg.png', capacity: 0.032, tooltip: 'Small keg.' },
-			{ symbol: '../images/keg.png', capacity: 0.041, tooltip: 'Medium keg.' },
-			{ symbol: '../images/keg.png', capacity: 0.062, tooltip: 'Big keg.' },
-			{ symbol: '../images/can.png', capacity: 0.013, tooltip: 'Pallet with 0.3L cans.' },
-			{ symbol: '../images/can.png', capacity: 0.018, tooltip: 'Pallet with 0.5L cans.' },
+            { symbol: '../images/bottle_s.png', capacity: 0.031, tooltip: 'Crate with 0,3L bottles.' },
+			{ symbol: '../images/bottle_m.png', capacity: 0.031, tooltip: 'Crate with 0,5L bottles.' },
+			{ symbol: '../images/bottle_l.png', capacity: 0.023, tooltip: 'Crate with 1L bottles.' },
+			{ symbol: '../images/keg_s.png', capacity: 0.032, tooltip: 'Small keg.' },
+			{ symbol: '../images/keg_m.png', capacity: 0.041, tooltip: 'Medium keg.' },
+			{ symbol: '../images/keg_l.png', capacity: 0.062, tooltip: 'Big keg.' },
+			{ symbol: '../images/can_m.png', capacity: 0.013, tooltip: 'Pallet with 0.3L cans.' },
+			{ symbol: '../images/can_l.png', capacity: 0.018, tooltip: 'Pallet with 0.5L cans.' },
         ]
         this.props = props
 

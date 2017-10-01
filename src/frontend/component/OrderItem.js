@@ -41,10 +41,15 @@ class OrderItem extends React.Component {
 	}
 
 	render() {
+		const imageStyle = {
+			width: '50px',
+			height: '50px'
+		}
+
 		return (<div>
 			<div  style={{display: 'block', margin: '15px 0px'}}>
 				<Tooltip content={this.data.tooltip}>
-					<img src={this.data.symbol}/>
+					<img style={imageStyle} src={this.data.symbol}/>
 				</Tooltip>
 			</div>
 			<button onClick={this.decrease.bind(this)}>-</button>
