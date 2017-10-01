@@ -16,8 +16,15 @@ class FromToRow extends React.Component {
 
         this.possibleValues = {
             'Berlin': 'Berlin',
+			'Hamburg': 'Hamburg',
+            'München': 'München',
+            'Köln': 'Köln',
+            'Stuttgart': 'Stuttgart',
+            'Düsseldorf': 'Düsseldorf',
+            'Dortmund': 'Dortmund',
+            'Essen': 'Essen',
             'Leipzig': 'Leipzig',
-            'Essen': 'Essen'
+            'Bremen': 'Bremen'
         }
 
         this.state = {
